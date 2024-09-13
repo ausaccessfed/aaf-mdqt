@@ -28,7 +28,7 @@ Commander.configure do
       MDQT::CLI::Version.run(args, options)
     end
   end
-
+  
   command :get do |c|
     c.syntax = 'mdqt get [options] entityidentifier '
     c.description = 'Download one entity record or an aggregate of entity records'

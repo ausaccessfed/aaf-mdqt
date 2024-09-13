@@ -21,7 +21,7 @@ module MDQT
       require_relative './metadata_response'
 
       #Rails.application.config.active_support.cache_format_version = 7.0
-      ActiveSupport::Deprecation.behavior = :silence
+      # ActiveSupport::Deprecation.behavior = :silence
 
       def initialize(base_url, options = {})
         @base_url = base_url
