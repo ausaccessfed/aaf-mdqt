@@ -12,14 +12,14 @@
 # Include: **/*.gemspec
 Gemspec/OrderedDependencies:
   Exclude:
-    - 'mdqt.gemspec'
+    - 'aaf-mdqt.gemspec'
 
 # Offense count: 1
 # Configuration parameters: Include.
 # Include: **/*.gemspec
 Gemspec/RequiredRubyVersion:
   Exclude:
-    - 'mdqt.gemspec'
+    - 'aaf-mdqt.gemspec'
 
 # Offense count: 1
 # Cop supports --auto-correct.
@@ -38,14 +38,14 @@ Layout/EmptyComment:
 # Cop supports --auto-correct.
 Layout/EmptyLineAfterMagicComment:
   Exclude:
-    - 'mdqt.gemspec'
+    - 'aaf-mdqt.gemspec'
 
 # Offense count: 3
 # Cop supports --auto-correct.
 Layout/EmptyLines:
   Exclude:
     - 'lib/mdqt/cli.rb'
-    - 'mdqt.gemspec'
+    - 'aaf-mdqt.gemspec'
     - 'spec/client/client_spec.rb'
 
 # Offense count: 3
@@ -97,7 +97,7 @@ Layout/EmptyLinesAroundModuleBody:
 # Configuration parameters: AllowForAlignment, ForceEqualSignAlignment.
 Layout/ExtraSpacing:
   Exclude:
-    - 'mdqt.gemspec'
+    - 'aaf-mdqt.gemspec'
 
 # Offense count: 3
 # Cop supports --auto-correct.
@@ -124,7 +124,7 @@ Layout/SpaceAroundEqualsInParameterDefault:
 # Configuration parameters: AllowForAlignment.
 Layout/SpaceAroundOperators:
   Exclude:
-    - 'mdqt.gemspec'
+    - 'aaf-mdqt.gemspec'
 
 # Offense count: 1
 # Cop supports --auto-correct.
@@ -197,13 +197,13 @@ Style/Documentation:
 # Cop supports --auto-correct.
 Style/Encoding:
   Exclude:
-    - 'mdqt.gemspec'
+    - 'aaf-mdqt.gemspec'
 
 # Offense count: 2
 # Cop supports --auto-correct.
 Style/ExpandPathArguments:
   Exclude:
-    - 'mdqt.gemspec'
+    - 'aaf-mdqt.gemspec'
     - 'spec/spec_helper.rb'
 
 # Offense count: 16
@@ -241,7 +241,7 @@ Style/NestedParenthesizedCalls:
 # Configuration parameters: PreferredDelimiters.
 Style/PercentLiteralDelimiters:
   Exclude:
-    - 'mdqt.gemspec'
+    - 'aaf-mdqt.gemspec'
 
 # Offense count: 1
 # Cop supports --auto-correct.
@@ -262,7 +262,7 @@ Style/StringLiterals:
     - 'lib/mdqt/cli/get.rb'
     - 'lib/mdqt/client/metadata_service.rb'
     - 'lib/mdqt/version.rb'
-    - 'mdqt.gemspec'
+    - 'aaf-mdqt.gemspec'
     - 'spec/mdqt_spec.rb'
     - 'spec/spec_helper.rb'
 
@@ -287,7 +287,7 @@ Style/TrivialAccessors:
 # Cop supports --auto-correct.
 Style/UnneededPercentQ:
   Exclude:
-    - 'mdqt.gemspec'
+    - 'aaf-mdqt.gemspec'
 
 # Offense count: 7
 # Configuration parameters: AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.

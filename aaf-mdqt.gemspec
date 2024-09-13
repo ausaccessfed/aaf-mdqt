@@ -4,10 +4,10 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'mdqt/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "mdqt"
+  spec.name          = "aaf-mdqt"
   spec.version       = MDQT::VERSION
-  spec.authors       = ["Pete Birkinshaw"]
-  spec.email         = ["pete@digitalidentitylabs.com"]
+  spec.authors       = ["Pete Birkinshaw", "Australian Access Federation"]
+  spec.email         = []
 
   spec.summary       = %q{Commandline utility for accessing MDQ services}
   spec.description   = %q{Commandline utility for downloading SAML metadata from MDQ services}
@@ -28,7 +28,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'faraday-http-cache', "~>2.5.0"
   spec.add_dependency 'faraday-follow_redirects', "~>0.3.0"
   spec.add_dependency 'httpx', "~>1.2.0"
-  spec.add_dependency 'activesupport', "~>7.1.2"
+  spec.add_dependency 'activesupport', ">=7.1.2"
   spec.add_dependency 'dalli', "~>3.2"
   spec.add_dependency 'pastel', "~>0.8"
   spec.add_dependency 'terminal-table', "~>3.0"
