@@ -1,6 +1,6 @@
-# MDQT - A Metadata Query Tool
+# NOTE: forked from https://github.com/Digital-Identity-Labs/mdqt
 
-[![Gem Version](https://badge.fury.io/rb/mdqt.svg)](https://badge.fury.io/rb/mdqt) [![Maintainability](https://api.codeclimate.com/v1/badges/111c46aaebfe25e4a4a9/maintainability)](https://codeclimate.com/github/Digital-Identity-Labs/mdqt/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/111c46aaebfe25e4a4a9/test_coverage)](https://codeclimate.com/github/Digital-Identity-Labs/mdqt/test_coverage) [![Build Status](https://travis-ci.org/Digital-Identity-Labs/mdqt.svg?branch=master)](https://travis-ci.org/Digital-Identity-Labs/mdqt)
+# MDQT - A Metadata Query Tool
 
 MDQT is small library and commandline tool to query MDQ services for SAML metadata.
 You could do this with `curl` and `xmlsec1` but it's a little more convenient to use `mdqt` instead.
