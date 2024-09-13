@@ -32,7 +32,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'dalli', "~>3.2"
   spec.add_dependency 'pastel', "~>0.8"
   spec.add_dependency 'terminal-table', "~>3.0"
-  spec.add_dependency 'concurrent-ruby-ext'
+  spec.add_dependency 'concurrent-ruby-ext', "~>1"
   spec.add_dependency 'xmldsig', "~>0.7.0"
 
   #  spec.add_development_dependency "bundler", "~>2"

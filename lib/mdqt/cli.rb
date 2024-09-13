@@ -15,6 +15,7 @@ module MDQT
     require 'mdqt/cli/ln'
     require 'mdqt/cli/ls'
     require 'mdqt/cli/list'
+    require 'mdqt/cli/options'
     require 'mdqt/cli/services'
     require 'mdqt/cli/rename'
     require 'mdqt/cli/url'
