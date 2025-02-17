@@ -61,6 +61,8 @@ module MDQT
 
       def output_metadata(results, options)
         case action(results, options)
+        when :no_output
+          # do nothing
         when :save_files
           output_files(results, options)
         when :print_to_stdout
@@ -72,6 +74,8 @@ module MDQT
 
       def action(results, options)
         case
+        when options.no_output
+          :no_output
         when options.save_to
           :save_files
         else

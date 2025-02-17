@@ -21,6 +21,7 @@ module MDQT
             cache: true,
             refresh: false,
             memcache: false,
+            no_output: false,
           }
         end
 
