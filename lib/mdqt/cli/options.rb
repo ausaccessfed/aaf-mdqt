@@ -15,7 +15,8 @@ module MDQT
         :tls_risky,
         :save_to,
         :list,
-        :verbose
+        :verbose,
+        :memcache
       ) do
         def initialize(**args)
           options = {
@@ -31,6 +32,7 @@ module MDQT
             save_to: nil,
             list: nil,
             verbose: nil,
+            memcache: nil,
             **MDQT::CLI::Defaults.cli_defaults
           }
           super(**options, **args)

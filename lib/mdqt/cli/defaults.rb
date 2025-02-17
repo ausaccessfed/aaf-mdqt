@@ -19,7 +19,8 @@ module MDQT
           {
             hash: force_hash?,
             cache: true,
-            refresh: false
+            refresh: false,
+            memcache: false,
           }
         end
 
