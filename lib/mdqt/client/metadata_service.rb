@@ -159,7 +159,7 @@ module MDQT
           faraday.headers['Accept-Charset'] = 'utf-8'
           faraday.headers['User-Agent'] = "MDQT v#{MDQT::VERSION}"
           faraday.response :logger
-          faraday.request :logger
+          # faraday.request :logger
           # faraday.adapter :httpx
         end
       end
