@@ -161,7 +161,11 @@ module MDQT
           #faraday.response :logger
           faraday.adapter :httpx
         end
+        enable_cache_logging if verbose?
+        con
+      end
 
+      def enable_cache_logging
         ActiveSupport::Notifications.subscribe "http_cache.faraday" do |*args|
           event = ActiveSupport::Notifications::Event.new(*args)
           cache_status = event.payload[:cache_status]
@@ -175,8 +179,6 @@ module MDQT
             STDERR.puts "cache ???"
           end
         end
-
-        con
       end
 
       def default_store_config
