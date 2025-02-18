@@ -144,7 +144,7 @@ module MDQT
       end
 
       def connection
-        Faraday.new(:url => base_url) do |faraday|
+        con = Faraday.new(:url => base_url) do |faraday|
           faraday.request :url_encoded
           faraday.response :follow_redirects
           if cache?
@@ -175,6 +175,8 @@ module MDQT
             STDERR.puts "cache ???"
           end
         end
+
+        con
       end
 
       def default_store_config
