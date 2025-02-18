@@ -144,10 +144,13 @@ module MDQT
       end
 
       def connection
+        say "shi"
+
         Faraday.new(:url => base_url) do |faraday|
           faraday.request :url_encoded
           faraday.response :follow_redirects
           if cache?
+            say "hello?"
             faraday.use :http_cache,
                         store: cache_store,
                         shared_cache: false,
