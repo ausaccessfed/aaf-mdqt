@@ -36,6 +36,8 @@ module MDQT
       end
 
       def self.introduce(options)
+        STDERR.puts "asdsa"
+
         if options.verbose
           STDERR.puts "MDQT version #{MDQT::VERSION}"
           STDERR.puts "Using #{service_url(options)}" unless options.service == :not_required
