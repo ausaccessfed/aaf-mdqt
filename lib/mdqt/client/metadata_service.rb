@@ -144,13 +144,11 @@ module MDQT
       end
 
       def connection
-        STDERR.puts "asdsa"
 
         Faraday.new(:url => base_url) do |faraday|
           faraday.request :url_encoded
           faraday.response :follow_redirects
           if cache?
-        STDERR.puts "hello?"
             faraday.use :http_cache,
                         store: cache_store,
                         shared_cache: false,
@@ -171,7 +169,11 @@ module MDQT
         when :none, nil
           nil
         when :file, :files
-          File.absolute_path(File.join(Dir.tmpdir, 'mdqt_cache'))
+
+          x = File.absolute_path(File.join(Dir.tmpdir, 'mdqt_cache'))
+          STDERR.puts x
+
+          x
         when :memcached, :memcache
           'localhost:11211'
         end
