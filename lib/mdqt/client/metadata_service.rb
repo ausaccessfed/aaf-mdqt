@@ -184,7 +184,7 @@ module MDQT
         when :none, nil
           nil
         when :file, :files
-          File.absolute_path(File.join('tmp', 'mdqt_cache'))
+          File.absolute_path(File.join('tmp', 'cache', 'mdqt_cache'))
         when :memcached, :memcache
           'localhost:11211'
         end
