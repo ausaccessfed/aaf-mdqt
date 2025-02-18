@@ -144,7 +144,7 @@ module MDQT
       end
 
       def connection
-        Faraday.new(:url => base_url) do |faraday|
+        con = Faraday.new(:url => base_url) do |faraday|
           faraday.request :url_encoded
           faraday.response :follow_redirects
           if cache?
@@ -160,6 +160,24 @@ module MDQT
           faraday.headers['User-Agent'] = "MDQT v#{MDQT::VERSION}"
           #faraday.adapter :httpx
         end
+        enable_cache_logging if verbose?
+        con
+      end
+
+      def enable_cache_logging
+        ActiveSupport::Notifications.subscribe "http_cache.faraday" do |*args|
+          event = ActiveSupport::Notifications::Event.new(*args)
+          cache_status = event.payload[:cache_status]
+
+          case cache_status
+          when :fresh, :valid
+            STDERR.puts "cache hit"
+          when :invalid, :miss
+            STDERR.puts "cache miss"
+          when :unacceptable
+            STDERR.puts "cache ???"
+          end
+        end
       end
 
       def default_store_config
@@ -167,7 +185,7 @@ module MDQT
         when :none, nil
           nil
         when :file, :files
-          File.absolute_path(File.join(Dir.tmpdir, 'mdqt_cache'))
+          File.absolute_path(File.join('tmp', 'cache', 'mdqt'))
         when :memcached, :memcache
           'localhost:11211'
         end
