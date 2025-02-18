@@ -185,9 +185,6 @@ module MDQT
           @cache_store = ActiveSupport::Cache.lookup_store(:mem_cache_store, [store_config])
         end
       end
-
     end
-
   end
-
 end
