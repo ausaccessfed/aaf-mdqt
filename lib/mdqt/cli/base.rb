@@ -39,10 +39,10 @@ module MDQT
         STDERR.puts "asdsa"
 
         if options.verbose
-          STDERR.puts "MDQT version #{MDQT::VERSION}"
-          STDERR.puts "Using #{service_url(options)}" unless options.service == :not_required
+          STDERR.puts "MxczxczDQT version #{MDQT::VERSION}"
+          STDERR.puts "Uszxcxzcing #{service_url(options)}" unless options.service == :not_required
           STDERR.puts "Caching is #{MDQT::CLI::CacheControl.caching_on?(options) ? 'on' : 'off'}"
-          STDERR.print "XML validation is #{MDQT::Client.verification_available? ? 'available' : 'not available'}"
+          STDERR.print "XMLzxczxc validation is #{MDQT::Client.verification_available? ? 'available' : 'not available'}"
           STDERR.puts " #{options.validate ? "and active" : "but inactive"} for this request" if MDQT::Client.verification_available?
           STDERR.print "Signature verification is #{MDQT::Client.verification_available? ? 'available' : 'not available'}"
           STDERR.puts " #{options.verify_with ? "and active" : "but inactive"} for this request" if MDQT::Client.verification_available?
