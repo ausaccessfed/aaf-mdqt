@@ -170,7 +170,8 @@ module MDQT
           nil
         when :file, :files
 
-          x = File.absolute_path(File.join(Dir.tmpdir, 'mdqt_cache'))
+
+          x = File.absolute_path(File.join('tmp', 'mdqt_cache'))
           STDERR.puts x
 
           x
