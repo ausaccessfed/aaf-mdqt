@@ -42,6 +42,8 @@ module MDQT
 
         begin
           http_response = connection.get do |req|
+          STDERR.puts request_path(entity_id)
+
             req.url request_path(entity_id)
             req.options.timeout = 1000
             req.options.open_timeout = 60
@@ -62,6 +64,8 @@ module MDQT
 
         begin
           http_response = connection.head do |req|
+          STDERR.puts request_path(entity_id)
+
             req.url request_path(entity_id)
             req.options.timeout = 1000
             req.options.open_timeout = 60
@@ -158,8 +162,6 @@ module MDQT
           faraday.headers['Accept'] = 'application/samlmetadata+xml'
           faraday.headers['Accept-Charset'] = 'utf-8'
           faraday.headers['User-Agent'] = "MDQT v#{MDQT::VERSION}"
-          faraday.response :logger
-          # faraday.request :logger
           # faraday.adapter :httpx
         end
       end
