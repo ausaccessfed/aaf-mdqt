@@ -29,7 +29,7 @@ module MDQT
         @store_config = options[:cache_store]
         @verbose = options[:verbose] ? true : false
         @explain = options[:explain] ? true : false
-        @cli = options[:cli?] ? true : false
+        @cli = options[:cli] ? true : false
         @tls_cert_check = options[:tls_cert_check] ? true : false
       end
 

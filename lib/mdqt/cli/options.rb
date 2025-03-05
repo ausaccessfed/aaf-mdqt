@@ -18,7 +18,7 @@ module MDQT
         :verbose,
         :memcache,
         :no_output,
-        :cli?,
+        :cli,
       ) do
         def initialize(**args)
           options = {
@@ -36,7 +36,7 @@ module MDQT
             verbose: nil,
             memcache: nil,
             no_output: nil,
-            cli?: true,
+            cli: true,
             **MDQT::CLI::Defaults.cli_defaults
           }
           super(**options, **args)

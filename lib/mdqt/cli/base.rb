@@ -17,7 +17,7 @@ module MDQT
       end
 
       def self.check_requirements(options)
-        cli = options.cli?
+        cli = options.cli
 
         unless options.service == :not_required
           _halt! "No MDQ service URL has been specified. Please use --service, MDQT_SERVICE or MDQ_BASE_URL", cli unless service_url(options).to_s.start_with?("http")
@@ -164,7 +164,7 @@ module MDQT
       end
 
       def halt!(comment)
-        raise StandardError.new(comment) if options.cli?
+        raise StandardError.new(comment) if options.cli
         abort pastel.red("Error: #{comment}")
       end
 
