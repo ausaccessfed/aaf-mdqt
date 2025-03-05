@@ -164,12 +164,12 @@ module MDQT
       end
 
       def halt!(comment)
-        raise StandardError.new(comment) if options.cli
+        raise StandardError.new(comment) unless options.cli
         abort pastel.red("Error: #{comment}")
       end
 
       def self._halt!(comment, cli)
-        raise StandardError.new(comment) if cli
+        raise StandardError.new(comment) unless cli
         abort pastel.red("Error: #{comment}")
       end
 
