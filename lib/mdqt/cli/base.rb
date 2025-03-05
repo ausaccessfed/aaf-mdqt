@@ -17,9 +17,10 @@ module MDQT
       end
 
       def self.check_requirements(options)
+        cli = options.cli?
 
         unless options.service == :not_required
-          abort "No MDQ service URL has been specified. Please use --service, MDQT_SERVICE or MDQ_BASE_URL" unless service_url(options).to_s.start_with?("http")
+          _halt! "No MDQ service URL has been specified. Please use --service, MDQT_SERVICE or MDQ_BASE_URL", cli unless service_url(options).to_s.start_with?("http")
         end
 
         if options.save_to
@@ -27,10 +28,10 @@ module MDQT
           begin
             FileUtils.mkdir_p(dir) unless File.exist?(dir)
           rescue
-            abort "Error: Directory #{dir} did not exist, and we can't create it"
+            _halt! "Error: Directory #{dir} did not exist, and we can't create it", cli
           end
-          abort "Error: '#{dir}' is not a writable directory!" if (File.directory?(dir) && !File.writable?(dir))
-          abort "Error: '#{dir}' is not a directory!" unless File.directory?(dir)
+          _halt! "Error: '#{dir}' is not a writable directory!", cli  if (File.directory?(dir) && !File.writable?(dir))
+          _halt! "Error: '#{dir}' is not a directory!", cli  unless File.directory?(dir)
         end
 
       end
@@ -163,6 +164,12 @@ module MDQT
       end
 
       def halt!(comment)
+        raise StandardError.new(comment) if options.cli?
+        abort pastel.red("Error: #{comment}")
+      end
+
+      def self._halt!(comment, cli)
+        raise StandardError.new(comment) if cli
         abort pastel.red("Error: #{comment}")
       end
 
