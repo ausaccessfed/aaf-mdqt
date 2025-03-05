@@ -22,6 +22,7 @@ module MDQT
             refresh: false,
             memcache: false,
             no_output: false,
+            cli: true,
           }
         end
 

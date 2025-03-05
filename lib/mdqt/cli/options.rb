@@ -36,7 +36,6 @@ module MDQT
             verbose: nil,
             memcache: nil,
             no_output: nil,
-            cli: true,
             **MDQT::CLI::Defaults.cli_defaults
           }
           super(**options, **args)
