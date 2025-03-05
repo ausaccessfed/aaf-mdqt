@@ -25,9 +25,10 @@ module MDQT
       @verbose         = options[:verbose] || false
       @explain         = options[:explain] || false
       @tls_cert_check  = options[:tls_risky] ? false : true
+      @cli  = options[:cli?]
       @cache_type = options[:cache_type] || :none
 
-      @md_service = MetadataService.new(@base_url, verbose: @verbose, cache_type: @cache_type, explain: @explain, tls_cert_check: tls_cert_check?)
+      @md_service = MetadataService.new(@base_url, verbose: @verbose, cache_type: @cache_type, explain: @explain, tls_cert_check: tls_cert_check?, cli?: @cli)
       @md_service.tidy_cache!
 
     end

@@ -29,6 +29,7 @@ module MDQT
         @store_config = options[:cache_store]
         @verbose = options[:verbose] ? true : false
         @explain = options[:explain] ? true : false
+        @cli = options[:cli?] ? true : false
         @tls_cert_check = options[:tls_cert_check] ? true : false
       end
 
@@ -47,9 +48,9 @@ module MDQT
             req.options.open_timeout = 60
           end
         rescue Faraday::ConnectionFailed => oops
-          abort "Error - can't connect to MDQ service at URL #{base_url}: #{oops.to_s}"
+          MDQT::CLI::Base._halt! "Error - can't connect to MDQ service at URL #{base_url}: #{oops.to_s}", @cli
         rescue Faraday::TimeoutError => oops
-          abort "Error - connection to #{base_url} timed out!"
+          MDQT::CLI::Base._halt! "Error - connection to #{base_url} timed out!", @cli
         end
 
         MetadataResponse.new(entity_id, base_url, http_response, explain: explain?)
@@ -67,9 +68,9 @@ module MDQT
             req.options.open_timeout = 60
           end
         rescue Faraday::ConnectionFailed => oops
-          abort "Error - can't connect to MDQ service at URL #{base_url}: #{oops.to_s}"
+          MDQT::CLI::Base._halt! "Error - can't connect to MDQ service at URL #{base_url}: #{oops.to_s}", @cli
         rescue Faraday::TimeoutError => oops
-          abort "Error - connection to #{base_url} timed out!"
+          MDQT::CLI::Base._halt! "Error - connection to #{base_url} timed out!", @cli
         end
 
         http_response.status == 200
@@ -114,7 +115,7 @@ module MDQT
       end
 
       def validate_sha1!(sha1)
-        abort "Error: SHA1 identifier '#{sha1}' is malformed, halting" unless valid_sha1?(sha1)
+        MDQT::CLI::Base._halt! "Error: SHA1 identifier '#{sha1}' is malformed, halting", @cli unless valid_sha1?(sha1)
         sha1
       end
 

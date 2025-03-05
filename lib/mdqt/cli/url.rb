@@ -13,7 +13,8 @@ module MDQT
                                   verbose:false,
                                   cache_type: :none,
                                   explain: false,
-                                  tls_cert_check: false)
+                                  tls_cert_check: false,
+                                  cli?: options.cli?)
 
         if args.empty?
           puts service_url(options)
