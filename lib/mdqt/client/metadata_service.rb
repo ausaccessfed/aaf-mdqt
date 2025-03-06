@@ -156,7 +156,6 @@ module MDQT
           end
           faraday.ssl.verify = tls_cert_check?
           faraday.headers['Accept'] = 'application/samlmetadata+xml'
-          faraday.headers['Content-Type'] = 'application/samlmetadata+xml'
           faraday.headers['Accept-Charset'] = 'utf-8'
           faraday.headers['User-Agent'] = "MDQT v#{MDQT::VERSION}"
           #faraday.adapter :httpx
