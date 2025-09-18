@@ -1,4 +1,7 @@
-publish-gem:
-	gem build aaf-mdqt.gemspec
-	gem push aaf-mdqt-*.gem
-	rm aaf-mdqt-*.gem
+-include .env # Applies to every target in the file!
+-include ../aaf-terraform/Makefile
+
+
+GEM_NAME=aaf-mdqt
+
+# Run make publish-gem
