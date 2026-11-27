@@ -5,13 +5,9 @@ on:
 jobs:
   todo_processor:
     name: "Todo processor receiver"
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     environment: privileged
-    permissions:
-      id-token: write
-      contents: write
-      issues: write
-      pull-requests: write
+    permissions: {}
     steps:
       - uses: ausaccessfed/workflows/.github/actions/todo-processor@main
         with:
@@ -19,3 +15,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.TERRAFORM_REPO_SCOPED_TOKEN }}
           BRANCH_NAME: ${{ github.event.client_payload.ref }}
           BACKFILL: ${{ github.event.client_payload.BACKFILL }}
+          SHA: ${{ github.event.client_payload.sha }}
